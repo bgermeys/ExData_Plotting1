@@ -1,3 +1,6 @@
+This files are created to generate graphics for Assignment 1 in the 'Exploratory Data Analysis' course. the following text is the original assignment.
+
+
 ## Introduction
 
 This assignment uses data from
