@@ -7,8 +7,12 @@ setwd("/Users/bart/Documents/R/Coursera/Cursus4")
 rm(list=ls())
 
 #read the unzipped txt-file and subset for 20070201 and 20070202
-s <- read.table("household_power_consumption.txt", header = TRUE, sep = ";", na.strings=c("",NA,"?"), stringsAsFactors = FALSE, colClasses = "character")
-y <- subset(s, Date == "1/2/2007" | Date == "2/2/2007")
+#inspired by the discussion forums
+y <- read.table(pipe('grep "^[1-2]/2/2007" "household_power_consumption.txt"'),header=F, sep=';')
+colnames(y) <-names(read.table('household_power_consumption.txt', header=TRUE,sep=";",nrows=1))
+#original
+#s <- read.table("household_power_consumption.txt", header = TRUE, sep = ";", na.strings=c("",NA,"?"), stringsAsFactors = FALSE, colClasses = "character")
+#y <- subset(s, Date == "1/2/2007" | Date == "2/2/2007")
 
 #hist() needs a numeric input
 #if no conversion an error occurs:
