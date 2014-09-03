@@ -15,9 +15,6 @@ colnames(y) <-names(read.table('household_power_consumption.txt', header=TRUE,se
 #y <- subset(s, Date == "1/2/2007" | Date == "2/2/2007")
 
 #hist() needs a numeric input
-#if no conversion an error occurs:
-#Error in hist.default(y$Global_active_power, col = "red", main = "Global active power",  : 
-#'x' must be numeric
 y$Global_active_power <- as.numeric(y$Global_active_power)
 
 #Create a DateTime column and store Date + Time fields combined
