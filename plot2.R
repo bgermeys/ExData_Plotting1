@@ -6,8 +6,8 @@ setwd("/Users/bart/Documents/R/Coursera/Cursus4")
 #cleaning variables
 rm(list=ls())
 
-#plot created on a dutch version of OS X. 'do' = 'Thu', 'vr' = 'Fri', 'za' = 'Sat'.
-#change locale
+# plot created on a dutch version of OS X.
+# so change locale
 Sys.setlocale("LC_TIME", "C")
 
 #read the unzipped txt-file and subset for 20070201 and 20070202
