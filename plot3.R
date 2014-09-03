@@ -6,7 +6,7 @@ setwd("/Users/bart/Documents/R/Coursera/Cursus4")
 #cleaning variables
 rm(list=ls())
 
-#plot created on a dutch version of OS X. 'do' = 'Thu', 'vr' = 'Fri', 'za' = 'Sat'.
+#plot created on a dutch version of OS X. 
 #change locale
 Sys.setlocale("LC_TIME", "C")
 
@@ -14,9 +14,6 @@ Sys.setlocale("LC_TIME", "C")
 #inspired by the discussion forums
 y <- read.table(pipe('grep "^[1-2]/2/2007" "household_power_consumption.txt"'),header=F, sep=';')
 colnames(y) <-names(read.table('household_power_consumption.txt', header=TRUE,sep=";",nrows=1))
-#original
-#s <- read.table("household_power_consumption.txt", header = TRUE, sep = ";", na.strings=c("",NA,"?"), stringsAsFactors = FALSE, colClasses = "character")
-#y <- subset(s, Date == "1/2/2007" | Date == "2/2/2007")
 
 #Create a DateTime column and store Date + Time fields combined
 y$Date <- strptime(y$Date, "%d/%m/%Y")
